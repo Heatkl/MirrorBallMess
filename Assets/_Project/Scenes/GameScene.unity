@@ -348,13 +348,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: 45.140003, y: 0, z: 25.280006}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 2020508264}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -792,7 +792,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1465828555391965941}
-  - {fileID: 2020508264}
   - {fileID: 1855994457}
   m_Father: {fileID: 1465828555391965949}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1396,6 +1395,7 @@ Transform:
   - {fileID: 1465828555391965915}
   - {fileID: 1465828555391965909}
   - {fileID: 1465828555391965911}
+  - {fileID: 2020508264}
   m_Father: {fileID: 823115300}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2020508263
@@ -1408,7 +1408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2020508264}
   m_Layer: 0
-  m_Name: Cannon
+  m_Name: CannonMuzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1431,7 +1431,8 @@ Transform:
   - {fileID: 1465828555391965947}
   - {fileID: 1465828555391965937}
   - {fileID: 1465828555391965939}
-  m_Father: {fileID: 823115300}
+  - {fileID: 330585546}
+  m_Father: {fileID: 1855994457}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1465828555391965909
 Transform:
@@ -1742,14 +1743,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465828555392059101}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.29, y: 0.29, z: 0.29}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 1.006, y: 0.642, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.099999994, z: 0.099999994}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 823115300}
   m_Father: {fileID: 1465828556714533901}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &1465828555391965951
 Transform:
   m_ObjectHideFlags: 0
@@ -3260,6 +3261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1465828556714533901}
+  - component: {fileID: 1465828556714533902}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Untagged
@@ -3276,18 +3278,39 @@ Transform:
   m_GameObject: {fileID: 1465828556714533900}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.99359, y: -2.9089012, z: -25.203644}
+  m_LocalPosition: {x: 56.405735, y: -17.892044, z: -21.41674}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1465828555391965949}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1465828556714533902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465828556714533900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed066a6cfa20214cbbe35dd68344baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxForwardAngle: 45
+  minBackwardAngle: -90
+  maxLeftAngle: 90
+  maxRightAngle: 90
+  ballProjectile: {fileID: 961245582958497425, guid: 8e1014dcf6e7cc24fbe252162ef64115,
+    type: 3}
+  ballSpawnPoint: {fileID: 697372690}
+  verticalRotationOrigin: {fileID: 1465828555391965949}
+  horizontalRotationOrigin: {fileID: 2020508264}
+  ballShotForce: 100000
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 330585546}
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 845088201}
